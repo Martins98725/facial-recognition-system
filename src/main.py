@@ -6,11 +6,11 @@ import serial
 import time
 
 
-PASTA_DATASET = "dataset" #
-FATOR_REDIMENSIONAMENTO = 0.5 #
-COOLDOWN_ABERTURA_SEGUNDOS = 10 #
-PORTA_SERIAL_ARDUINO = 'COM3' #
-BAUD_RATE = 9600 #
+PASTA_DATASET = "dataset"
+FATOR_REDIMENSIONAMENTO = 0.5
+COOLDOWN_ABERTURA_SEGUNDOS = 10
+PORTA_SERIAL_ARDUINO = 'COM3'
+BAUD_RATE = 9600
 TOLERANCIA = 0.6
 
 
@@ -25,9 +25,9 @@ try:
     PESSOAS_AUTORIZADAS = [d for d in os.listdir(PASTA_DATASET) if os.path.isdir(os.path.join(PASTA_DATASET, d))] #
 
     if not PESSOAS_AUTORIZADAS:
-        print("[AVISO] Nenhuma pessoa encontrada na pasta 'dataset'.") #
+        print("[AVISO] Nenhuma pessoa encontrada na pasta 'dataset'.")
     else:
-        print(f"[INFO] Pessoas autorizadas encontradas: {', '.join(PESSOAS_AUTORIZADAS)}") #
+        print(f"[INFO] Pessoas autorizadas encontradas: {', '.join(PESSOAS_AUTORIZADAS)}")
         for nome_pessoa in PESSOAS_AUTORIZADAS:
             caminho_pessoa = os.path.join(PASTA_DATASET, nome_pessoa)
             for nome_arquivo in os.listdir(caminho_pessoa):
@@ -43,7 +43,7 @@ try:
 
 except FileNotFoundError:
     print(f"[ERRO] A pasta '{PASTA_DATASET}' não foi encontrada! Execute o script 'registerFace.py' primeiro.") #
-    PESSOAS_AUTORIZADAS = [] #
+    PESSOAS_AUTORIZADAS = []
 
 
 
